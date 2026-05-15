@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taskflow</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">taskflow</div>
+    <div class="header-stats">
+      <span><strong id="h-total">0</strong> tasks</span>
+      <span><strong id="h-done">0</strong> done</span>
+      <span><strong id="h-pending">0</strong> pending</span>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <div class="hero">
+      <h1>Good day. Let's get things done.</h1>
+      <p>Track your tasks, set priorities, and check them off as you go.</p>
+    </div>
+
+    <div class="progress-card" id="progress-card">
+      <div class="stat-block">
+        <div class="stat-num" id="stat-done">0</div>
+        <div class="stat-label">Completed</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num" id="stat-pending">0</div>
+        <div class="stat-label">Remaining</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num" id="stat-pct">0%</div>
+        <div class="stat-label">Progress</div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-fill" id="progress-fill"></div>
+      </div>
+    </div>
+
+    <div class="add-section">
+      <div class="add-row">
+        <input class="input-main" id="task-input" type="text" placeholder="What needs to be done?" maxlength="200" />
+        <button class="btn-add" onclick="addTask()">+ Add task</button>
+      </div>
+      <div class="add-meta">
+        <select class="select-meta" id="sel-priority">
+          <option value="medium">Medium priority</option>
+          <option value="high">High priority</option>
+          <option value="low">Low priority</option>
+        </select>
+        <select class="select-meta" id="sel-category">
+          <option value="">No category</option>
+          <option value="Work">Work</option>
+          <option value="Personal">Personal</option>
+          <option value="Health">Health</option>
+          <option value="Finance">Finance</option>
+          <option value="Home">Home</option>
+          <option value="Learning">Learning</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="filter-bar">
+      <span class="filter-label">Show:</span>
+      <button class="filter-btn active" onclick="setFilter('all', this)">All</button>
+      <button class="filter-btn" onclick="setFilter('active', this)">Active</button>
+      <button class="filter-btn" onclick="setFilter('done', this)">Completed</button>
+      <button class="filter-btn" onclick="setFilter('high', this)">High</button>
+      <button class="filter-btn" onclick="setFilter('medium', this)">Medium</button>
+      <button class="filter-btn" onclick="setFilter('low', this)">Low</button>
+    </div>
+
+    <div id="list-active"></div>
+    <div id="list-done"></div>
+
+    <div id="empty-state" class="empty-state">
+      <p>No tasks yet. Add one above to get started!</p>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

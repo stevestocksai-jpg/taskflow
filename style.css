@@ -1,0 +1,381 @@
+/* ===========================
+   GENERAL SETUP
+=========================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #F7F5F0;
+  color: #1A1714;
+  min-height: 100vh;
+}
+
+/* ===========================
+   TOP BAR
+=========================== */
+
+header {
+  background: white;
+  border-bottom: 1px solid #E2DED5;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  position: sticky;
+  top: 0;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2D6A4F;
+}
+
+.header-stats {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.85rem;
+  color: #7A756E;
+}
+
+/* ===========================
+   MAIN CONTENT AREA
+=========================== */
+
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+.hero {
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 0.35rem;
+}
+
+.hero p {
+  color: #7A756E;
+}
+
+/* ===========================
+   PROGRESS CARD
+=========================== */
+
+.progress-card {
+  background: white;
+  border: 1px solid #E2DED5;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.75rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.stat-block {
+  text-align: center;
+}
+
+.stat-num {
+  font-size: 2rem;
+  color: #2D6A4F;
+  font-weight: bold;
+}
+
+.stat-label {
+  font-size: 0.78rem;
+  color: #7A756E;
+  margin-top: 0.2rem;
+}
+
+.progress-bar-wrap {
+  grid-column: 1 / -1;
+  background: #F0EDE6;
+  border-radius: 100px;
+  height: 8px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: #2D6A4F;
+  border-radius: 100px;
+  width: 0%;
+  transition: width 0.4s ease;
+}
+
+/* ===========================
+   ADD TASK BOX
+=========================== */
+
+.add-section {
+  background: white;
+  border: 1px solid #E2DED5;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.add-row {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.input-main {
+  flex: 1;
+  border: 1.5px solid #E2DED5;
+  border-radius: 8px;
+  padding: 0.65rem 1rem;
+  font-size: 0.95rem;
+  background: #F7F5F0;
+  outline: none;
+}
+
+.input-main:focus {
+  border-color: #2D6A4F;
+}
+
+.btn-add {
+  background: #2D6A4F;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.65rem 1.4rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-add:hover {
+  background: #1E4D38;
+}
+
+.add-meta {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.select-meta {
+  border: 1.5px solid #E2DED5;
+  border-radius: 8px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.82rem;
+  background: #F7F5F0;
+  cursor: pointer;
+}
+
+/* ===========================
+   FILTER BUTTONS
+=========================== */
+
+.filter-bar {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filter-label {
+  font-size: 0.8rem;
+  color: #7A756E;
+}
+
+.filter-btn {
+  border: 1.5px solid #E2DED5;
+  border-radius: 100px;
+  padding: 0.3rem 0.9rem;
+  font-size: 0.82rem;
+  background: white;
+  color: #7A756E;
+  cursor: pointer;
+}
+
+.filter-btn:hover {
+  border-color: #2D6A4F;
+  color: #2D6A4F;
+}
+
+.filter-btn.active {
+  background: #2D6A4F;
+  border-color: #2D6A4F;
+  color: white;
+  font-weight: bold;
+}
+
+/* ===========================
+   TASK ITEMS
+=========================== */
+
+.list-group {
+  margin-bottom: 1.75rem;
+}
+
+.list-group-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.6rem;
+}
+
+.list-group-title {
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #7A756E;
+}
+
+.list-group-line {
+  flex: 1;
+  height: 1px;
+  background: #E2DED5;
+}
+
+.list-group-count {
+  font-size: 0.75rem;
+  color: #7A756E;
+}
+
+.task-item {
+  background: white;
+  border: 1px solid #E2DED5;
+  border-radius: 12px;
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.task-item.done {
+  background: #F0EDE6;
+  opacity: 0.72;
+}
+
+.task-check {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  border-radius: 50%;
+  border: 2px solid #E2DED5;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  background: white;
+}
+
+.task-check:hover {
+  border-color: #2D6A4F;
+}
+
+.task-item.done .task-check {
+  background: #2D6A4F;
+  border-color: #2D6A4F;
+}
+
+.task-body {
+  flex: 1;
+}
+
+.task-text {
+  font-size: 0.95rem;
+}
+
+.task-item.done .task-text {
+  text-decoration: line-through;
+  color: #7A756E;
+}
+
+.task-meta {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.35rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.tag-priority {
+  font-size: 0.72rem;
+  font-weight: bold;
+  padding: 0.15rem 0.55rem;
+  border-radius: 100px;
+}
+
+.tag-priority.high { background: #FDECEA; color: #C0392B; }
+.tag-priority.medium { background: #FEF3DC; color: #E07B00; }
+.tag-priority.low { background: #D8EAE0; color: #1E4D38; }
+
+.tag-category {
+  font-size: 0.72rem;
+  color: #7A756E;
+  background: #F7F5F0;
+  padding: 0.15rem 0.55rem;
+  border-radius: 100px;
+  border: 1px solid #E2DED5;
+}
+
+.task-date {
+  font-size: 0.72rem;
+  color: #7A756E;
+}
+
+.task-actions {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.action-btn {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 6px;
+  color: #7A756E;
+}
+
+.action-btn:hover {
+  background: #FDECEA;
+  color: #C0392B;
+}
+
+/* ===========================
+   EMPTY STATE
+=========================== */
+
+.empty-state {
+  text-align: center;
+  padding: 3.5rem 1rem;
+  color: #7A756E;
+}
+
+/* ===========================
+   CLEAR DONE BUTTON
+=========================== */
+
+.clear-done {
+  font-size: 0.8rem;
+  color: #7A756E;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.clear-done:hover {
+  color: #C0392B;
+}
